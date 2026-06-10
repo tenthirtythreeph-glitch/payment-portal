@@ -1,0 +1,14 @@
+ @if (isOpen()) {
+      <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div class="rounded-lg bg-white p-6 shadow-lg max-w-sm">
+          <h2 class="mb-2 text-lg font-semibold text-red-600">Error</h2>
+          <p class="mb-6 text-gray-700">{{ message() }}</p>
+          <button
+            (click)="close()"
+            class="w-full rounded-lg bg-red-600 px-4 py-2 font-medium text-white hover:bg-red-700"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    }
