@@ -16,10 +16,14 @@ export class App {
 
   onCheckoutComplete(payload: CheckoutPayload): void {
     this.checkoutApi.sendCheckout(payload).subscribe({
-      next: (response) => console.log('Checkout complete:', response),
-      error: (error) => {
+      next: (response: any) => {
+        console.log('Checkout complete:', response.redirect_url);
+        window.location.href = response.redirect_url
+        // Optionally, you can show a success message or redirect the user here
+      },
+      error: (error: any) => {
         console.error('Checkout failed:', error);
-        const message = error?.message || 'Payment failed. Please try again.';
+        const message = error?.error?.operation?.error_message || error?.message ||  'An unexpected error occurred during checkout.';
         this.errorModal.show(message);
       },
     });
