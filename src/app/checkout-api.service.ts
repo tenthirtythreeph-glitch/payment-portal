@@ -7,7 +7,7 @@ import { CheckoutPayload } from './checkout/checkout.component';
   providedIn: 'root',
 })
 export class CheckoutApiService {
-  private readonly apiUrl = 'http://localhost:3000/api/pay';
+  private readonly apiUrl = 'https://payment-portal-api.vercel.app/api/pay';
 
   constructor(private readonly http: HttpClient) {}
 

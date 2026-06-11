@@ -79,7 +79,7 @@
             [class.hover:bg-gray-50]="subTotal() !== amount"
             (click)="selectPreset(amount)"
           >
-            {{ amount | currency: 'PHP' : 'symbol' : '1.0-0' : 'en-PH' }}
+            {{ amount | currency: 'USD' : 'symbol' : '1.0-0' : 'en-PH' }}
           </button>
         }
       </div>
@@ -266,11 +266,11 @@
 
           <p class="text-xs font-medium uppercase tracking-wider text-blue-100">You are sending</p>
           <p class="mt-2 text-3xl font-bold tracking-tight">
-            {{ totalAmount() | currency: 'PHP' : 'symbol' : '1.2-2' : 'en-PH' }}
+            {{ totalAmount() | currency: 'USD' : 'symbol' : '1.2-2' : 'en-PH' }}
           </p>
           <p class="mt-2 text-xs text-blue-100/90">
             Includes processing fee of
-            {{ processingFee | currency: 'PHP' : 'symbol' : '1.2-2' : 'en-PH' }}
+            {{ processingFee | currency: 'USD' : 'symbol' : '1.2-2' : 'en-PH' }}
           </p>
         </div>
       </div>
@@ -291,7 +291,7 @@
                 <span class="text-sm text-gray-600">Sub Total</span>
               </div>
               <span class="text-sm font-semibold text-gray-900 shrink-0">
-                {{ subTotal() | currency: 'PHP' : 'symbol' : '1.2-2' : 'en-PH' }}
+                {{ subTotal() | currency: 'USD' : 'symbol' : '1.2-2' : 'en-PH' }}
               </span>
             </div>
 
@@ -305,7 +305,7 @@
                 <span class="text-sm text-gray-600">Processing Fee</span>
               </div>
               <span class="text-sm font-semibold text-gray-900 shrink-0">
-                {{ processingFee | currency: 'PHP' : 'symbol' : '1.2-2' : 'en-PH' }}
+                {{ processingFee | currency: 'USD' : 'symbol' : '1.2-2' : 'en-PH' }}
               </span>
             </div>
 
@@ -325,7 +325,7 @@
           <div class="mt-4 flex items-center justify-between border-t border-gray-200/80 pt-4">
             <span class="text-sm font-semibold text-gray-900">Total</span>
             <span class="text-base font-bold text-blue-900">
-              {{ totalAmount() | currency: 'PHP' : 'symbol' : '1.2-2' : 'en-PH' }}
+              {{ totalAmount() | currency: 'USD' : 'symbol' : '1.2-2' : 'en-PH' }}
             </span>
           </div>
         </div>

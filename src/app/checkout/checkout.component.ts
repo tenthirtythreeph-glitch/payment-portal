@@ -132,16 +132,17 @@ export class CheckoutComponent {
     let passwork = '6[1v2hKy5lZ>';
     let secretKey = '=N?WQ=biB|%j!jl[>t}yT[L!*kY{jo';
     let currency = 'USD';
-    let callbackUrl = 'http://localhost:3000/api/notify';
-    let returnUrl = 'http://localhost:4200/';
+    let callbackUrl = 'https://payment-portal-api.vercel.app/api/notify';
+    let returnUrl = 'https://payment-portal-awowcvcj5-ten33-s-projects.vercel.app/';
+    let txnamount = this.totalAmount() * 100; // Convert to cents
 
-    let raw_signature = serviceId + passwork + this.totalAmount() + currency + operationId + paymentId + this.paymentMethod() + callbackUrl + returnUrl;
+    let raw_signature = serviceId + passwork + txnamount + currency + operationId + paymentId + this.paymentMethod() + callbackUrl + returnUrl;
     let signature = CryptoJS.HmacSHA256(raw_signature, secretKey); // This is a placeholder. Replace with actual signature generation logic.
 
     const payload: CheckoutPayload = {
       service_id: serviceId,
       passwork: passwork,
-      amount: this.totalAmount(),
+      amount: txnamount,
       currency: currency,
       operation_id: `${serviceId}${timestamp}`,
       payment_id: `${serviceId}${timestamp}`,
